@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Appointments;
+use App\Models\Appointment;
 use Illuminate\Http\Request;
 
 class appointmentController extends Controller
@@ -15,11 +15,11 @@ class appointmentController extends Controller
             "email" => ['required','email'],
             "disease" => ['required'],
             "datetime" => ['required'],
-            "doctor" => ['required']
+            "doc_id" => ['required']
         ]);
 
-        Appointments::create($formFields);
-        return back();
+        Appointment::create($formFields);
+        return back()->with('message','Appointment Booked Successfully!');
         
     }
 }

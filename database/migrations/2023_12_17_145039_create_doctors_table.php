@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('spec');
+            $table->string('exp');
+            $table->string('status');
+            $table->string('image');
             $table->timestamps();
         });
     }

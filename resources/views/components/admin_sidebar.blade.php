@@ -1,4 +1,8 @@
 <style>
+    body {
+        overflow: hidden !important;
+    }
+
     .admin-sidebar {
         height: 100vh;
         display: flex;
@@ -34,10 +38,18 @@
 </style>
 <div class="col-lg-3 admin-sidebar">
     <ul class="list-unstyled">
-        <li><i class="bi bi-pc-display-horizontal"></i>dashboard</li>
+        <li><i class="bi bi-pc-display-horizontal"></i>
+            <a href="/">Home</a>
+        </li>
+        <li><i class="bi bi-pc-display-horizontal"></i>
+            <a href="/dashboard">dashboard</a>
+        </li>
         <li><i class="bi bi-ethernet"></i>department</li>
         <li><i class="bi bi-person-circle"></i>
-            <a href="/admin/dashboard/add-doctors">doctor</a>
+            <a href="/add-doctors">Add doctor</a>
+        </li>
+        <li><i class="bi bi-person-circle"></i>
+            <a href="/view-doctors">View Doctors</a>
         </li>
         <li><i class="bi bi-person-wheelchair"></i>patient</li>
         <li><i class="bi bi-gender-female"></i>nurse</li>

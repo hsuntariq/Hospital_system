@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('email');
             $table->string('disease');
             $table->dateTime('datetime');
-            $table->string('doctor');
+            $table->unsignedBigInteger('doc_id');
+            $table->foreign('doc_id')->references('id')->on('doctors')->onDelete('cascade');
             $table->timestamps();
         });
     }
