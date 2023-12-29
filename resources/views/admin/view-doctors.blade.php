@@ -14,6 +14,7 @@
         }
     </style>
     <div class="row ">
+        <x-flash />
         <x-admin_sidebar />
         <div class="col-lg-9 my-5">
             <div class="row container mx-auto">
@@ -43,9 +44,28 @@
                                     </h6>
                                 </div>
                             </div>
-                            <a href="/single-doctor/{{ $item->id }}" class="btn btn-info">
-                                See Details
-                            </a>
+                            <div class="d-flex justify-content-between">
+                                <a href="/single-doctor/{{ $item->id }}" class="btn btn-info">
+                                    Details
+                                </a>
+                                <form action="/delete-doctor/{{ $item->id }}" method="POST">
+                                    @csrf
+                                    <button class="btn btn-danger">
+                                        Delete
+                                    </button>
+
+                                </form>
+
+                                <form action="/update-status/{{ $item->id }}" method="POST">
+                                    @csrf
+                                    <button name="status" value="available" class="btn btn-warning">
+                                        Available
+                                    </button>
+                                    <button name="status" value="unavailable" class="btn btn-outline-warning">
+                                        UnAvailable
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 @endforeach

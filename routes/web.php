@@ -16,11 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/','homepage');
-Route::view('/dashboard', 'admin.dashboard');
+Route::view('/', 'homepage')->name('home');
+Route::view('/dashboard', 'admin.dashboard')->middleware(['auth','admin']);
 Route::view('/add-doctors', 'admin.add-doctors');
 Route::view('/register', 'users.register');
 Route::view('/view-doctors', 'admin.view-doctors');
+Route::view('/appointments', 'users.appointments');
 
 
 
@@ -29,9 +30,13 @@ Route::post('/add-doctor', [doctorController::class, 'addDoctor']);
 Route::post('/register', [userController::class, 'SignUp']);
 Route::post('/logout', [userController::class, 'Logout']);
 Route::post('/login', [userController::class, 'Login']);
+Route::post('/delete-doctor/{id}', [doctorController::class, 'deleteDoctor']);
+Route::post('/update-status/{id}', [doctorController::class, 'updateStatus']);
 
 
 
-Route::get('/', [doctorController::class, 'getDoctors']);
+Route::get('/', [doctorController::class, 'getDoctors'])->name('home');
 Route::get('/view-doctors',[doctorController::class,'viewDoctors']);
 Route::get('/single-doctor/{id}', [doctorController::class, 'singleDoctor']);
+Route::get('/appointments', [appointmentController::class, 'getAppointments']);
+Route::get('/dashboard', [userController::class, 'getUser']);

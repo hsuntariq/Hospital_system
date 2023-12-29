@@ -49,12 +49,22 @@
         </header>
         <div class="menu d-flex  justify-content-center">
             <ul class="list-unstyled d-flex gap-3 align-items-center">
-                <li>Home</li>
+                <li>
+                    <a class="nav-link" href="/">Home</a>
+                </li>
                 <li>about</li>
                 <li>departments</li>
                 <li>doctor</li>
                 <li>services</li>
                 <li>contact</li>
+                <li>
+                    <a href="/appointments">Your appointments</a>
+                </li>
+                @can('isAdmin')
+                    <li>
+                        <a class="nav-link" href="/dashboard"> dashboard</a>
+                    </li>
+                @endcan
                 <li>
                     {{-- <form action="">
             <input type="search" name="search" placeholder="search..." id="">

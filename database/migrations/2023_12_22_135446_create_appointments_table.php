@@ -20,7 +20,9 @@ return new class extends Migration
             $table->string('disease');
             $table->dateTime('datetime');
             $table->unsignedBigInteger('doc_id');
-            $table->foreign('doc_id')->references('id')->on('doctors')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('doc_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

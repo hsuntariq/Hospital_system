@@ -48,4 +48,23 @@ class userController extends Controller
     }
 
 
+    public function getUser(){
+        $data = [
+            "doctor"=>[
+                "value" => User::where('role',1)->get(),
+                "icon" => 'bi bi-person'
+            ],
+            "users" => [
+                "value"=>User::where('role',0)->get(),
+                "icon" => 'bi bi-house',
+            ],
+            "admins"=>[
+                "value"=>User::where('role',2)->get(),
+                "icon" => 'bi bi-link'
+            ]
+        ];
+        return view('admin.dashboard', compact('data'));
+    }
+
+
 }

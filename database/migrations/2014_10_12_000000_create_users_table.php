@@ -21,6 +21,10 @@ return new class extends Migration
             $table->string('phone');
             $table->string('address');
             $table->string('image');
+            $table->integer('role')->default(0);
+            $table->string('spec')->nullable();
+            $table->string('exp')->nullable();
+            $table->string('status')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

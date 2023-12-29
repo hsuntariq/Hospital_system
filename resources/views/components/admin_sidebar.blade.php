@@ -41,20 +41,29 @@
         <li><i class="bi bi-pc-display-horizontal"></i>
             <a href="/">Home</a>
         </li>
-        <li><i class="bi bi-pc-display-horizontal"></i>
-            <a href="/dashboard">dashboard</a>
-        </li>
+        @can('isAdmin')
+            <li><i class="bi bi-pc-display-horizontal"></i>
+                <a href="/dashboard">dashboard</a>
+            </li>
+            <li><i class="bi bi-person-circle"></i>
+                <a href="/add-doctors">Add doctor</a>
+            </li>
+            <li><i class="bi bi-person-circle"></i>
+                <a href="/view-doctors">View Doctors</a>
+            </li>
+            <li><i class="bi bi-gender-female"></i>nurse</li>
+            <li><i class="bi bi-capsule"></i>pharmacist</li>
+            <li><i class="bi bi-droplet-half"></i>laboratorist</li>
+            <li><i class="bi bi-cash-coin"></i>accountant</li>
+            <li><i class="bi bi-pc-display-horizontal"></i>
+                <a href="/">Home</a>
+            </li>
+        @endcan
+
         <li><i class="bi bi-ethernet"></i>department</li>
-        <li><i class="bi bi-person-circle"></i>
-            <a href="/add-doctors">Add doctor</a>
-        </li>
-        <li><i class="bi bi-person-circle"></i>
-            <a href="/view-doctors">View Doctors</a>
-        </li>
+
+
         <li><i class="bi bi-person-wheelchair"></i>patient</li>
-        <li><i class="bi bi-gender-female"></i>nurse</li>
-        <li><i class="bi bi-capsule"></i>pharmacist</li>
-        <li><i class="bi bi-droplet-half"></i>laboratorist</li>
-        <li><i class="bi bi-cash-coin"></i>accountant</li>
+
     </ul>
 </div>
