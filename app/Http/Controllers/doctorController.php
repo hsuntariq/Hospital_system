@@ -32,8 +32,13 @@ class doctorController extends Controller
 
     public function getDoctors(){
         // get the data from the backend
-        $doctors = User::where('role', 1)->get();
-        return view('homepage', compact('doctors'));
+        $nurses = User::where('role', 3)->paginate(3);
+        $doctors = User::where('role', 1)->paginate(3);
+        $pharmacist = User::where('role', 4)->get();
+        $lab = User::where('role', 5)->get();
+        $accountant = User::where('role', 6)->get();
+        
+        return view('homepage', compact('doctors','nurses','pharmacist','lab','accountant'));
     }
     public function viewDoctors(){
         // get the data from the backend

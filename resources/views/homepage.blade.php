@@ -171,6 +171,101 @@
             </div>
         </div>
     </div>
+    </div>
+    <div class="container">
+        <h1 class="text-center display-2">
+            Our Doctors
+        </h1>
+        <div class="row">
+            @foreach ($doctors as $item)
+                <div class="col-lg-4 ">
+                    <div class="card p-3 my-2 d-flex flex-column justify-content-center align-items-center">
+                        <img width="300px" height="300px" style="object-fit: cover;"
+                            src="{{ asset('./storage/' . $item->image) }}" alt="">
+                        <h4 class="text-capitalize">Name:{{ $item->name }}</h4>
+                        <h6 class="">Specialization:{{ $item->spec }}</h6>
+                    </div>
+                </div>
+            @endforeach
+            {{ $doctors->links('pagination::bootstrap-5') }}
+        </div>
+        <div class="container">
+            <h1 class="text-center display-2">
+                Our Nurses
+            </h1>
+            <div class="row">
+                @foreach ($nurses as $item)
+                    <div class="col-lg-4 ">
+                        <div class="card p-3 my-2 d-flex flex-column justify-content-center align-items-center">
+                            <img width="300px" height="300px" style="object-fit: cover;"
+                                src="{{ asset('./storage/' . $item->image) }}" alt="">
+                            <h4 class="text-capitalize">Name:{{ $item->name }}</h4>
+                            <h6 class="">Specialization:{{ $item->spec }}</h6>
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+            <div class="container">
+                <h1 class="text-center display-2">
+                    Our pharmacist
+                </h1>
+                @if (count($pharmacist) > 0)
+                    <div class="row">
+                        @foreach ($pharmacist as $item)
+                            <div class="col-lg-4 ">
+                                <div
+                                    class="card p-3 my-2 d-flex flex-column justify-content-center align-items-center">
+                                    <img width="300px" height="300px" style="object-fit: cover;"
+                                        src="{{ asset('./storage/' . $item->image) }}" alt="">
+                                    <h4 class="text-capitalize">Name:{{ $item->name }}</h4>
+                                    <h6 class="">Specialization:{{ $item->spec }}</h6>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
+                @else
+                    <h1 class="text-center display-4 text-danger">
+                        No Pharmacist yet
+                    </h1>
+                @endif
+                <div class="container">
+                    <h1 class="text-center display-2">
+                        Our laboratorist
+                    </h1>
+                    <div class="row">
+                        @foreach ($lab as $item)
+                            <div class="col-lg-4 ">
+                                <div
+                                    class="card p-3 my-2 d-flex flex-column justify-content-center align-items-center">
+                                    <img width="300px" height="300px" style="object-fit: cover;"
+                                        src="{{ asset('./storage/' . $item->image) }}" alt="">
+                                    <h4 class="text-capitalize">Name:{{ $item->name }}</h4>
+                                    <h6 class="">Specialization:{{ $item->spec }}</h6>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
+                    <div class="container">
+                        <h1 class="text-center display-2">
+                            Our Accountant
+                        </h1>
+                        <div class="row">
+                            @foreach ($accountant as $item)
+                                <div class="col-lg-4 ">
+                                    <div
+                                        class="card p-3 my-2 d-flex flex-column justify-content-center align-items-center">
+                                        <img width="300px" height="300px" style="object-fit: cover;"
+                                            src="{{ asset('./storage/' . $item->image) }}" alt="">
+                                        <h4 class="text-capitalize">Name:{{ $item->name }}</h4>
+                                        <h6 class="">Specialization:{{ $item->spec }}</h6>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                        </div>
 
 
 </x-layout>

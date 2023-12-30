@@ -1,6 +1,6 @@
 <style>
     body {
-        overflow: hidden !important;
+        /* overflow: hidden !important; */
     }
 
     .admin-sidebar {
@@ -46,7 +46,7 @@
                 <a href="/dashboard">dashboard</a>
             </li>
             <li><i class="bi bi-person-circle"></i>
-                <a href="/add-doctors">Add doctor</a>
+                <a href="/add-doctors">Add Employee</a>
             </li>
             <li><i class="bi bi-person-circle"></i>
                 <a href="/view-doctors">View Doctors</a>

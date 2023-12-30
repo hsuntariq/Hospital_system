@@ -57,9 +57,12 @@
                 <li>doctor</li>
                 <li>services</li>
                 <li>contact</li>
-                <li>
-                    <a href="/appointments">Your appointments</a>
-                </li>
+                @auth
+
+                    <li>
+                        <a href="/appointments">Your appointments</a>
+                    </li>
+                @endauth
                 @can('isAdmin')
                     <li>
                         <a class="nav-link" href="/dashboard"> dashboard</a>
